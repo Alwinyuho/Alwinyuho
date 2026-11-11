@@ -1,0 +1,5 @@
+# Private planning notes stay local.
+PORTFOLIO_PLAN.md
+
+# Raw downloads (datasets, archives) never go into git.
+_downloads/

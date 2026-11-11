@@ -1,0 +1,29 @@
+name: bhasha-rag CI
+
+on:
+  push:
+    paths: ["bhasha-rag/**", ".github/workflows/bhasha-rag.yml"]
+  pull_request:
+    paths: ["bhasha-rag/**", ".github/workflows/bhasha-rag.yml"]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: bhasha-rag
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: bhasha-rag/pyproject.toml
+      - name: Install
+        run: pip install -e ".[dev]"
+      - name: Lint
+        run: |
+          ruff check .
+          ruff format --check .
+      - name: Test
+        run: pytest -q
