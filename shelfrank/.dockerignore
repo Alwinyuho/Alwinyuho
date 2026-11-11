@@ -1,6 +1,0 @@
-.venv
-artifacts
-logs
-tests
-**/__pycache__
-.env

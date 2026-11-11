@@ -3,3 +3,9 @@ PORTFOLIO_PLAN.md
 
 # Raw downloads (datasets, archives) never go into git.
 _downloads/
+
+# Each project now lives in its own repository (github.com/Alwinyuho/<name>).
+/bhasha-rag/
+/queryguard/
+/shelfrank/
+/.github/
